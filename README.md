@@ -8,7 +8,7 @@ As of now, it contains two features
 
 
 ## Authors
-
+- [@suhas](https://github.com/SuHas1909)
 - [@sahilsgovekar](https://www.github.com/sahilsgovekar)
 
 <br>
