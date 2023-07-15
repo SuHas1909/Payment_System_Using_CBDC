@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="description" content="">
+    <meta name="author" content="Sahil Govekar"> -->
+
+    <title>CBDC Financial Interface</title>
+
+    <!-- Link Section -->
+
+    <!-- Bootstrap Link Sectionb CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+    <!-- <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+     -->
+
+    <!-- Style for Cover i.e Home -->
+
+    <link href="{{ url_for('static', filename='cover.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='homecss.css') }}" rel="stylesheet">
+
+</head>
+
+
+
+
+
+
+<body class="d-flex h-100 text-center text-bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <!-- Heading include username from database and nav bar -->
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">{{username}}</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0" href="/home">Home</a>
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#pay">Pay</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="#loan">Loan</a>
+                    <!-- <a class="nav-link fw-bold py-1 px-0" href="#">Investment</a> -->
+                    <a class="nav-link fw-bold py-1 px-0" href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+
+
+        <!-- main sectrion content -->
+        <main class="px-3">
+
+            <!-- pay -->
+            <div id="pay">
+                <h2 class="hr-lines"> PAY </h2>
+                <div class="row  justify-content-center spacy">
+
+                    <div class="col-lg-6 colMenu">
+                        <h3 class="btn btn-secondary btn-lg"> Balance : {{bal}}</h3>
+                    </div>
+                    <div class="col-lg-6 colMenu">
+                        <a href="/topup" class="btn btn-outline-warning btn-lg">Top-up</a>
+                    </div>
+                </div>
+                <br><br>
+                <div class="bx">
+                    <div class="row  justify-content-center spacy">
+                        <div class="col-lg-6 colMenu">
+                            <a href="/pay/username" class="btn btn-outline-light btn-lg">username</a>
+                        </div>
+                        <div class="col-lg-6 colMenu">
+                            <a href="/pay/phoneno" class="btn btn-outline-light btn-lg">Phone Number</a>
+                        </div>
+                        <div class="col-lg-6 colMenu">
+                            <a href="/pay/qr" class="btn btn-outline-light btn-lg">QR</a>
+                        </div>
+                        <div class="col-lg-6 colMenu">
+                            <a href="/pay/banktransfer" class="btn btn-outline-light btn-lg">Bank Transfer</a>
+                        </div>
+                    </div>
+
+                    <a href="/history" class="btn btn-outline-primary">History</a>
+                </div>
+
+
+
+            </div>
+
+            <!-- loan -->
+            <div id="loan">
+                <h2 class="hr-lines"> LOAN </h2>
+
+                <h3 class="bal">Total Debt : {{cur_ln.debt}}</h3>
+                <h3 class="bal">Credits available : {{cur_ln.credits}}</h3>
+                <h3 class="bal">Score : {{cur_ln.score}}</h3>
+                <br>
+                <div class="row  justify-content-center spacy">
+                    <div class="col-lg-6 colMenu">
+                        <a href="/loan/avail" class="btn btn-outline-light btn-lg">Avail Loan</a>
+                    </div>
+                    <div class="col-lg-6 colMenu">
+                        <a href="/loan/pay" class="btn btn-outline-light btn-lg">Pay Loan</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- investment -->
+
+            <!-- <div>
+                <h2 class="hr-lines"> INVESTMENT </h2>
+
+                <h3 class="bal">Protfolio Value : </h3>
+                <br>
+                <div class="row  justify-content-center spacy">
+                    <div class="col-lg-6 colMenu">
+                        <a href="/investment/buy" class="btn btn-outline-light btn-lg">Buy</a>
+                    </div>
+                    <div class="col-lg-6 colMenu">
+                        <a href="/investment/sell" class="btn btn-outline-light btn-lg">Sell/List</a>
+                    </div>
+                </div>
+
+            </div> -->
+            <br><br><br>
+
+
+
+        </main>
+
+
+
+
+        <!-- footer section -->
+        <footer class="mt-auto text-white-50">
+            <p>Developed by <a href="https://github.com/sahilsgovekar" class="text-white">Sahil Govekar</a> and <a
+                    href="https://twitter.com/sahilsgovekar" class="text-white">S Suhas</a></p>
+            <p>Project repo available at <a
+                    href="https://github.com/sahilsgovekar/Payment_System_and_Financial_Interface_using_CBDC">github.com/sahilsgovekar</a>
+            </p>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+
+
+
+
+/* line between text style */
+.hr-lines{
+    position: relative;
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+.hr-lines:before{
+    content:" ";
+    height: 2px;
+    width: 130px;
+    background: rgb(255, 255, 255);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  
+.hr-lines:after{
+    content:" ";
+    height: 2px;
+    width: 130px;
+    background: rgb(255, 255, 255);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+
+
+/* .colMenu {
+    width: calc(33.333333% - 30px);
+    margin: 15px;
+} */
+
+.colMenu {
+  padding: 2%;
+}
+
+.bal {
+  text-align: left;
+  padding-bottom: 2%;
+}
+
+.hist {
+  text-align: left;
+  padding-top: 2%;
+}
+
+.foot {
+  padding-top: 5%;
+  padding-bottom: 1%;
+}
+
+.bx {
+  border:1px solid rgb(255, 255, 255);
+  padding: 6%;
+}
+
+.szz {
+  width: 35%;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  /*These options are for the div to be visible in the example, the important is the first*/
+  /* border:1px solid black; */
+  width: auto;
+  height: 50px;
+}
+
+.cmb {
+  display: block;
+  margin: 0 auto;
+}
+
+.adm {
+  font-size: xx-large;
+  padding-bottom: 10%;
+  padding-top: 0%;
+}
+
+
+.demo-qr {
+  width: 30%;
+  height: 30%;
+  color: rgb(251, 1, 1);
+}
